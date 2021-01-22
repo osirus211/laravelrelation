@@ -85,3 +85,7 @@ Route::get('soft-delete/{id}/', function ($id){
     Post::find($id)->delete();
 
 });
+
+Route::get('readSoftDelete', function (){
+    return Post::withTrashed()->whereNotNull('deleted_at')->get();
+});
