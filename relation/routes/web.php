@@ -98,3 +98,9 @@ Route::get('/restore', function(){
     // all will be restored
     return Post::withTrashed()->whereNotNull('deleted_at')->restore();
 });
+
+
+Route::get('/foreceDelete', function(){
+    // all will be restored
+    return Post::withTrashed()->whereNotNull('deleted_at')->forceDelete();
+});
