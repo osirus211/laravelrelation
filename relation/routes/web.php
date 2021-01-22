@@ -78,3 +78,10 @@ Route::get('destroy', function(){
 
 //    Post::destroy(5,7); multiple
 });
+
+
+Route::get('soft-delete/{id}/', function ($id){
+
+    Post::find($id)->delete();
+
+});
