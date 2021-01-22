@@ -92,3 +92,9 @@ Route::get('readSoftDelete', function (){
 
 
 });
+
+
+Route::get('/restore', function(){
+    // all will be restored
+    return Post::withTrashed()->whereNotNull('deleted_at')->restore();
+});
