@@ -90,7 +90,6 @@ Route::get('readSoftDelete', function (){
     // can be done with whereNotNull
     return Post::withTrashed()->get() .'</br></br>'. Post::onlyTrashed()->get();
 
-
 });
 
 
