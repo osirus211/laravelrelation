@@ -8,6 +8,6 @@ use App\Post;
 class User extends Model
 {
     Public function Post(){
-        return $this->hasOne('App\Post');
+        return $this->hasMany('App\Post');
     }
 }

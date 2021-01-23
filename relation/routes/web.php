@@ -103,3 +103,16 @@ Route::get('/foreceDelete', function(){
     // all will be restored
     return Post::withTrashed()->whereNotNull('deleted_at')->forceDelete();
 });
+
+/*
+|--------------------------------------------------------------------------
+| relation one to one
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+
+Route::get('user/{id}/post', function ($id){
+    return User::find($id)->post;
+});
